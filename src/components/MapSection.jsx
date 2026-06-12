@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import resort from "../assets/images2.jpg";
+import resort2 from "../assets/images.jpg";
+
+
 
 const venueAddress = "Two Brothers Resort, Paanchgaon, Umred Road, Nagpur, Maharashtra";
 
@@ -27,12 +31,9 @@ export default function MapSection() {
           <p>{venueAddress}</p>
           <div className="meta-row">
             <strong>Event Dates</strong>
-            <span>25 - 26 June 2026</span>
+            <span> 25 - 26 June 2026</span>
           </div>
-          <div className="meta-row">
-            <strong>Feature</strong>
-            <span>Luxury stay & floral celebration</span>
-          </div>
+           
           <div className="venue-actions">
             <button className="mini-button" type="button" onClick={copyAddress}>
               {copied ? "Copied Address" : "Copy Address"}
@@ -42,8 +43,8 @@ export default function MapSection() {
             </a>
           </div>
           <div className="venue-preview">
-            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80" alt="Resort venue" />
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Royal venue" />
+            <img src={resort} alt="Resort venue" />
+            <img src={resort2} alt="Royal venue" />
           </div>
         </motion.div>
       </div>

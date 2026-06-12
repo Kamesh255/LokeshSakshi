@@ -45,6 +45,7 @@ export default function RSVPForm() {
               <option value="no">Unable to Attend</option>
             </select>
           </div>
+          <br/>
           <button className="rsvp-submit" type="submit">
             Send RSVP
           </button>

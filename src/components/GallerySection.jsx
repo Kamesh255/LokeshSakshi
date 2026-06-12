@@ -6,14 +6,22 @@ import { FiZoomIn } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import lokesh1 from "../assets/lokesh1.png";
+import lokesh2 from "../assets/lokesh2.png";
+import lokesh3 from "../assets/lokesh3.png";
+import lokesh4 from "../assets/lokesh4.png";
+import lokesh5 from "../assets/lokesh5.png";
+import lokesh6 from "../assets/lokesh6.png";
+import lokesh7 from "../assets/lokesh7.png";
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80", label: "Pre-Wedding Magic" },
-  { src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80", label: "Engagement Moments" },
-  { src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80", label: "Family Love" },
-  { src: "https://images.unsplash.com/photo-1513628253939-010e64ac66cd?auto=format&fit=crop&w=900&q=80", label: "Luxury Memories" },
-  { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=80", label: "Royal Ceremony" },
-  { src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80", label: "Couple Portrait" },
+  { src: lokesh1, label: "Celebration" },
+  { src: lokesh2, label: "Celebration" },
+  { src: lokesh3, label: "Couple Moment" },
+  { src: lokesh4, label: "Celebration" },
+  { src: lokesh5, label: "Celebration" },
+  { src: lokesh6, label: "Romantic" },
+  { src: lokesh7, label: "Memories" },
 ];
 
 export default function GallerySection() {
@@ -30,7 +38,7 @@ export default function GallerySection() {
           {galleryImages.map((item) => (
             <SwiperSlide key={item.src}>
               <div className="gallery-card glass-card" onClick={() => setPreview(item)}>
-                <img src={item.src} alt={item.label} />
+                <img src={item.src} />
                 <span className="gallery-label">
                   {item.label} <FiZoomIn />
                 </span>
@@ -42,8 +50,7 @@ export default function GallerySection() {
       {preview && (
         <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setPreview(null)}>
           <div className="lightbox-content">
-            <img src={preview.src} alt={preview.label} />
-            <p>{preview.label}</p>
+            <img src={preview.src}  />
           </div>
         </div>
       )}

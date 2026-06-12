@@ -21,6 +21,8 @@ export default function BlessingsWall() {
       </div>
       <motion.form className="glass-card" onSubmit={handleWish} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
         <textarea className="wish-input" rows="4" placeholder="Write your blessing..." value={message} onChange={(e) => setMessage(e.target.value)} />
+          <br/>
+          <br/>
         <button className="wish-submit" type="submit">
           Leave Blessing
         </button>

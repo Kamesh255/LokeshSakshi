@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { BsMusicNoteBeamed, BsVolumeMuteFill } from "react-icons/bs";
 import { GiElephantHead } from "react-icons/gi";
+import weddingMusic from "../assets/Wedding.mp3";
 
-const musicUrl = "https://assets.mixkit.co/active_storage/sfx/727/727-preview.mp3";
+const musicUrl = weddingMusic;
 
 const heroAnimations = {
   hidden: { opacity: 0, y: 40 },
@@ -52,6 +53,7 @@ export default function Hero() {
           <GiElephantHead className="ganesh-icon" />
           <div>
             <span>Om Gan Ganapataye Namah</span>
+            <br />
             <strong>As they embark on a beautiful journey of love, companionship, and togetherness.</strong>
           </div>
         </motion.div>

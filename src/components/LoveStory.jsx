@@ -6,31 +6,31 @@ const storyItems = [
     title: "Engagement",
     icon: <FaRing />,
     date: "25 June 2026",
-    description: "The royal promise that lit the first spark of our wedding journey.",
+    description: "The moment two hearts and two families officially become one. A beautiful beginning to forever.",
   },
   {
     title: "Sangeet Night",
     icon: <FaMusic />,
     date: "25 June 2026",
-    description: "A neon-lit night of music, dance, and celebration under the stars.",
+    description: "An unforgettable evening filled with music, dance, laughter, and memories that will last a lifetime.",
   },
   {
     title: "Haldi Ceremony",
     icon: <FaRegHeart />,
     date: "26 June 2026",
-    description: "A golden ritual of laughter, blessings and festive joy.",
+    description: "Traditional blessings, joyful rituals, and a splash of happiness before the big day.",
   },
   {
     title: "Baraat",
     icon: <FaHorse />,
     date: "26 June 2026",
-    description: "A grand procession of color, rhythm and royal celebration.",
+    description: "The groom arrives with grandeur, music, and endless celebration as the wedding festivities begin.",
   },
   {
     title: "Wedding",
     icon: <FaFire />,
     date: "26 June 2026",
-    description: "Sacred vows in the glow of floral mandap and treasured tradition.",
+    description: "The groom arrives with grandeur, music, and endless celebration as the wedding festivities begin.",
   },
 ];
 
