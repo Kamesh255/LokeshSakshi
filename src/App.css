@@ -1,38 +1,774 @@
-.App {
+.royal-wedding-app {
+  color: #f8f0e7;
+  background: radial-gradient(circle at top, rgba(176, 27, 59, 0.22), transparent 32%), linear-gradient(180deg, #2b0614 0%, #12040d 35%, #1c0613 100%);
+  overflow-x: hidden;
+}
+
+.section-shell {
+  position: relative;
+  padding: 5rem 1.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.glass-card,
+.event-card,
+.rule-card,
+.family-card,
+.wish-card,
+.gallery-card,
+.map-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.26);
+  border-radius: 28px;
+}
+
+.hero-section {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.hero-section::before,
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-section::before {
+  background: radial-gradient(circle at 25% 20%, rgba(255, 207, 135, 0.16), transparent 22%), radial-gradient(circle at 80% 12%, rgba(255, 146, 131, 0.18), transparent 18%);
+}
+
+.hero-section::after {
+  background: linear-gradient(180deg, rgba(47, 8, 31, 0.35), rgba(13, 4, 12, 0.94));
+}
+
+.hero-floral-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 186, 137, 0.07);
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-banner {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 205, 130, 0.22);
+  color: #ffe7c8;
+  font-size: 0.95rem;
+}
+
+.ganesh-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #ffd47a;
+}
+
+.hero-intro,
+.hero-title,
+.hero-date {
+  font-family: "Playfair Display", serif;
+}
+
+.hero-intro {
+  color: #f7d8c1;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+}
+
+.hero-title {
+  font-size: clamp(4rem, 8vw, 7.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title .gold {
+  color: #ffd576;
+}
+
+.hero-date {
+  font-size: clamp(1.15rem, 1.8vw, 1.75rem);
+  letter-spacing: 0.24em;
+  color: #f9e5d1;
+}
+
+.hero-action {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.music-button,
+.map-button,
+.cta-button,
+.mini-button {
+  border: 1px solid rgba(255, 215, 138, 0.24);
+  color: #f6e5d4;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.music-button:hover,
+.map-button:hover,
+.cta-button:hover,
+.mini-button:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 48px rgba(255, 168, 90, 0.14);
+}
+
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  color: #f7e6d5;
+  margin-top: 2rem;
+}
+
+.scroll-indicator span {
+  font-size: 0.82rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.scroll-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 215, 138, 0.75);
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.88;
+  }
+  50% {
+    transform: translateY(14px);
+    opacity: 0.45;
+  }
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.35rem;
+}
+
+.countdown-card {
+  padding: 1.75rem 1.4rem;
+  text-align: center;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.countdown-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 214, 140, 0.16), rgba(255, 255, 255, 0.06));
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.countdown-card h3,
+.timeline-card h3,
+.event-card h3,
+.rule-card h3,
+.family-card h3,
+.wish-card h3 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.85rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+
+.countdown-card p {
+  position: relative;
+  z-index: 1;
+  color: #fff8e9;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  margin: 0;
+  color: #fef1df;
+}
+
+.section-title p {
+  margin: 0.85rem auto 0;
+  max-width: 760px;
+  color: #d7c3a3;
+}
+
+.timeline-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.timeline-card {
+  padding: 1.7rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: rgba(255, 203, 120, 0.18);
+  color: #ffe8bd;
+  font-size: 1.45rem;
+}
+
+.timeline-card h4,
+.event-card h4,
+.rule-card h4,
+.family-card h4 {
+  margin-bottom: 0.35rem;
+}
+
+.timeline-card p,
+.event-card p,
+.rule-card p,
+.family-card p,
+.wish-card p {
+  margin: 0;
+  color: #dbc9af;
+  line-height: 1.7;
+}
+
+.events-grid,
+.rules-grid,
+.family-grid,
+.gallery-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.event-card {
+  padding: 1.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  transition: transform 0.25s ease;
+}
+
+.event-card .event-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  width: fit-content;
+  color: #ffebc5;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.event-card .event-meta {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.event-card .meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.9rem;
+  color: #f4e1c0;
+}
+
+.event-card .event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.4rem;
+  padding: 0.95rem 1.2rem;
+  background: linear-gradient(135deg, rgba(255, 195, 105, 0.32), rgba(255, 160, 80, 0.18));
+  border-radius: 999px;
+  color: #fff;
+  border: 1px solid rgba(255, 201, 105, 0.22);
+}
+
+.rule-card,
+.family-card,
+.wish-card {
+  padding: 1.6rem;
+}
+
+.rule-icon,
+.family-avatar {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(255, 214, 127, 0.18);
+  font-size: 1.35rem;
+  color: #ffe6bd;
+}
+
+.rule-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.family-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.family-avatar {
+  align-self: start;
+}
+
+.family-card h4 {
+  margin: 0;
+}
+
+.family-card .family-role {
+  color: #e9d3b3;
+  font-size: 0.96rem;
+}
+
+.gallery-section {
+  position: relative;
+}
+
+.gallery-slider {
+  width: 100%;
+}
+
+.gallery-card {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(17, 7, 15, 0.72));
+}
+
+.gallery-card .gallery-label {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 1;
+  color: #fff;
+  font-weight: 700;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 3, 9, 0.92);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.lightbox-content {
+  max-width: 900px;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 48px 120px rgba(0, 0, 0, 0.48);
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lightbox-content p {
+  margin: 0;
+  padding: 1.15rem 1.3rem;
+  background: rgba(17, 8, 17, 0.95);
+  color: #f8e7c5;
+  font-weight: 600;
+}
+
+.family-meta {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.map-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.map-frame {
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-card {
+  padding: 1.55rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.venue-preview {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.venue-preview img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.rsvp-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.rsvp-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.rsvp-input,
+.rsvp-select,
+.wish-input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f6ebd9;
+}
+
+.rsvp-input::placeholder,
+.wish-input::placeholder {
+  color: rgba(255, 235, 205, 0.65);
+}
+
+.rsvp-submit,
+.wish-submit {
+  width: fit-content;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  color: #1a0610;
+  background: linear-gradient(135deg, #ffd87f, #f6c574);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.success-text {
+  margin-top: 1rem;
+  color: #f7d089;
+}
+
+.rsvp-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.rsvp-entry {
+  display: grid;
+  gap: 0.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.9rem;
+}
+
+.wish-card {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.wish-card .wish-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: #ffdca8;
+  font-size: 0.95rem;
+}
+
+footer {
+  padding: 3rem 1.5rem 3.8rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #d7bf9a;
+}
+
+.loading-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #230517 0%, #0d030d 100%);
+  padding: 2rem;
+}
+
+.loading-card {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 3rem 2rem;
+  border-radius: 32px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.24);
+}
+
+.loading-crest {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, rgba(255, 212, 119, 0.24), transparent 52%);
+  color: #ffd67f;
+  font-size: 2.4rem;
+}
+
+.loading-card h2 {
+  margin: 0;
+  color: #f7e7cf;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 4vw, 3rem);
+}
+
+.loading-card p {
+  margin-top: 1rem;
+  color: #d7c2a6;
+  line-height: 1.8;
+}
+
+.loading-confetti {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.loading-confetti span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 213, 122, 0.9);
+  animation: confetti-fall 4s infinite ease-in;
+}
+
+.loading-confetti span:nth-child(odd) {
+  background: rgba(255, 166, 145, 0.9);
+}
+
+.loading-confetti span:nth-child(2n) {
+  background: rgba(255, 229, 186, 0.95);
+}
+
+.loading-confetti span:nth-child(1) {
+  left: 10%;
+  top: -5%;
+  animation-delay: 0s;
+}
+.loading-confetti span:nth-child(2) {
+  left: 24%;
+  top: -15%;
+  animation-delay: 0.2s;
+}
+.loading-confetti span:nth-child(3) {
+  left: 38%;
+  top: -10%;
+  animation-delay: 0.4s;
+}
+.loading-confetti span:nth-child(4) {
+  left: 52%;
+  top: -8%;
+  animation-delay: 0.6s;
+}
+.loading-confetti span:nth-child(5) {
+  left: 66%;
+  top: -12%;
+  animation-delay: 0.8s;
+}
+.loading-confetti span:nth-child(6) {
+  left: 80%;
+  top: -7%;
+  animation-delay: 1s;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(280px) rotate(360deg);
+    opacity: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.petal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 182, 82, 0.85);
+  filter: blur(0.5px);
+  animation: float 9s infinite ease-in-out;
+  pointer-events: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-120px) rotate(180deg);
+    opacity: 0.24;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(255, 203, 115, 1), rgba(255, 150, 70, 1));
+  width: 0;
+  z-index: 99;
+}
+
+@media (min-width: 780px) {
+  .hero-content {
+    gap: 2rem;
+  }
+
+  .events-grid,
+  .timeline-grid,
+  .rules-grid,
+  .family-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 4rem 2rem;
+  }
+  .section-shell {
+    padding: 5rem 2rem;
+  }
+  .events-grid,
+  .timeline-grid,
+  .rules-grid,
+  .family-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 3.4rem;
+  }
+  .section-shell {
+    padding: 3rem 1rem;
   }
 }

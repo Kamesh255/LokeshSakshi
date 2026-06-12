@@ -65,6 +65,44 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+## Premium Wedding Invitation Website
+
+This repository now contains a premium React wedding invitation site with rich Framer Motion animations, a responsive glassmorphism design, a countdown timer, timeline section, event cards, RSVP form, blessings wall, gallery, and interactive venue map.
+
+### Local Launch
+
+To run locally:
+
+```bash
+npm install
+npm start
+```
+
+Then open [http://localhost:3000](http://localhost:3000).
+
+### Production Build
+
+Create an optimized production bundle:
+
+```bash
+npm run build
+```
+
+The optimized files are output to the `build/` directory.
+
+### Serve the Build Locally
+
+Use a static server such as `serve`:
+
+```bash
+npm install -g serve
+serve -s build
+```
+
+### Recommended Deployment
+
+Deploy the `build/` folder to any static hosting provider, such as Vercel, Netlify, GitHub Pages, or Firebase Hosting.
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
