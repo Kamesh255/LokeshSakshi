@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaFire, FaMusic, FaHorse, FaRing, FaPalette } from "react-icons/fa";
+import { FaMusic, FaHorse, FaRing, FaPalette } from "react-icons/fa";
 
 const events = [
   {
