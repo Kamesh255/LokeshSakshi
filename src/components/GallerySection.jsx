@@ -38,7 +38,7 @@ export default function GallerySection() {
           {galleryImages.map((item) => (
             <SwiperSlide key={item.src}>
               <div className="gallery-card glass-card" onClick={() => setPreview(item)}>
-                <img src={item.src} />
+                <img src={item.src} alt={item.label} />
                 <span className="gallery-label">
                   {item.label} <FiZoomIn />
                 </span>
@@ -50,7 +50,7 @@ export default function GallerySection() {
       {preview && (
         <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setPreview(null)}>
           <div className="lightbox-content">
-            <img src={preview.src}  />
+            <img src={preview.src} alt={preview.label} />
           </div>
         </div>
       )}
