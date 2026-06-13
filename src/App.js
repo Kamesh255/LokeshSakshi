@@ -4,7 +4,6 @@ import { AnimatePresence } from "framer-motion";
 import "./App.css";
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
-import LoveStory from "./components/LoveStory";
 import EventsSection from "./components/EventsSection";
 import HostFamily from "./components/WeddingRules";
 import FamilySection from "./components/FamilySection";
@@ -41,7 +40,6 @@ function MainPage() {
     <div className="royal-wedding-app">
       <Hero />
       <Countdown />
-      {/* <LoveStory /> */}
       <EventsSection />
       <HostFamily />
       <FamilySection />
