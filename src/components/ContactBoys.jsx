@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { FiUsers } from "react-icons/fi";
 
-const hostFamily = [{ name: "Mr. Parasram Nimje & Mrs. Sheela Nimje" }, { name: "Mr. Laldas Nimje & Mrs. Vinita Nimje" }, { name: "Mr. Jagdish Nimje & Mrs. Kanta Nimje" },{ name: "Mr. Devendra Kohad & Mrs. Usha Kohad" }, { name: "Mr. Shekhar Kohad & Mrs. Vaishali Kohad" }, { name: "and the entire Nimje & Kohad Family" }];
+const hostFamily = [{ name: "Groom's", Num:"+91 81286 21422"}, { name: "Groom's", Num:"+91 8109152546" }, { name: "Bride's", Num:"+91 9354193194" }];
 
-export default function WeddingRules() {
+export default function ContactBoys() {
   return (
     <section id="hosts" className="section-shell">
       <div className="section-title">
-        <h2>Host Family</h2>
-        <p>Awaiting your gracious presence for Lokesh and Sakshi's royal celebration.</p>
+        <h2>Groom's & Bride's Contacts</h2>
+        <p>Your presence means the world to us. For any assistance regarding the celebrations, please get in touch</p>
       </div>
       <div className="rules-grid">
         {hostFamily.map((item, index) => (
@@ -17,6 +17,7 @@ export default function WeddingRules() {
               <FiUsers />
             </div>
             <h3>{item.name}</h3>
+            <p>{item.Num}</p>
           </motion.article>
         ))}
       </div>

@@ -11,10 +11,10 @@ import FamilySection from "./components/FamilySection";
 import GallerySection from "./components/GallerySection";
 import MapSection from "./components/MapSection";
 import RSVPForm from "./components/RSVPForm";
-import BlessingsWall from "./components/BlessingsWall";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import LoadingScreen from "./components/LoadingScreen";
+import ContactBoys from "./components/ContactBoys";
 
 function RouteWatcher() {
   const location = useLocation();
@@ -41,14 +41,14 @@ function MainPage() {
     <div className="royal-wedding-app">
       <Hero />
       <Countdown />
-      <LoveStory />
+      {/* <LoveStory /> */}
       <EventsSection />
       <HostFamily />
       <FamilySection />
       <GallerySection />
       <MapSection />
       <RSVPForm />
-      <BlessingsWall />
+      <ContactBoys/>
       <Footer />
     </div>
   );

@@ -73,9 +73,9 @@ export default function EventsSection() {
                 <span>{event.location}</span>
               </div>
             </div>
-            <a className="event-link" href={event.map} target="_blank" rel="noreferrer">
+            {/* <a className="event-link" href={event.map} target="_blank" rel="noreferrer">
               View on Google Maps
-            </a>
+            </a> */}
           </motion.article>
         ))}
       </div>

@@ -69,7 +69,7 @@ export default function Hero() {
           25 - 26 June 2026 | Two Brothers Resort, Nagpur
         </motion.div>
         <motion.p initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.4, duration: 1 } }}>
-          A modern royal wedding celebration in burgundy, gold, cream and rose tones. Experience luxury motion, floral glamour, and premium invitation vibes.
+         Two hearts, one beautiful journey. Join us as we celebrate love, laughter, and a lifetime of togetherness. ❤️
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.55, duration: 1 } }} className="hero-action">
           <button className="music-button" type="button" onClick={() => setMusicOn((state) => !state)}>

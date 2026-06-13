@@ -503,7 +503,7 @@
 .venue-preview {
   display: grid;
   gap: 0.85rem;
-  grid-template-columns:49% 49%;
+  grid-template-columns: 49% 49%;
 }
 
 .venue-preview img {
@@ -513,60 +513,154 @@
   border-radius: 22px;
 }
 
+.rsvp-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .rsvp-shell {
   display: grid;
   gap: 1.5rem;
 }
 
+.rsvp-card,
+.rsvp-preview {
+  padding: 2rem;
+}
+
 .rsvp-grid {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rsvp-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.rsvp-field span {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffdca8;
 }
 
 .rsvp-input,
 .rsvp-select,
-.wish-input {
+.rsvp-textarea {
   width: 100%;
-  padding: 1rem 1.1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.1rem 1.2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.08);
   color: #f6ebd9;
+  font-size: 1rem;
+  outline: none;
+}
+
+.rsvp-textarea {
+  min-height: 142px;
+  resize: vertical;
 }
 
 .rsvp-input::placeholder,
+.rsvp-textarea::placeholder,
 .wish-input::placeholder {
-  color: rgba(255, 235, 205, 0.65);
+  color: rgba(255, 235, 205, 0.6);
 }
 
-.rsvp-submit,
-.wish-submit {
+.rsvp-fullwidth {
+  grid-column: 1 / -1;
+}
+
+.rsvp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.rsvp-submit {
   width: fit-content;
-  padding: 1rem 1.6rem;
+  padding: 1rem 1.7rem;
   border-radius: 999px;
   border: none;
   color: #1a0610;
-  background: linear-gradient(135deg, #ffd87f, #f6c574);
+  background: linear-gradient(135deg, #ffd87f, #f4c76f);
   font-weight: 700;
   cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.success-text {
+.rsvp-submit:hover,
+.rsvp-submit:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(255, 210, 116, 0.24);
+}
+
+.rsvp-helper {
+  color: #f6e2c7;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.rsvp-status {
   margin-top: 1rem;
-  color: #f7d089;
+  font-weight: 600;
 }
 
-.rsvp-list {
-  display: grid;
-  gap: 0.85rem;
-  margin-top: 1rem;
+.status-success {
+  color: #d4e7b9;
 }
 
-.rsvp-entry {
+.status-error {
+  color: #f9c6b7;
+}
+
+.rsvp-preview {
   display: grid;
-  gap: 0.35rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 0.9rem;
+  gap: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.rsvp-preview h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #ffe7c8;
+}
+
+.rsvp-bullet {
+  padding-left: 1rem;
+  color: #f5e1c0;
+  line-height: 1.7;
+  position: relative;
+}
+
+.rsvp-bullet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ffd87f;
+}
+
+@media (max-width: 900px) {
+  .rsvp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-card,
+  .rsvp-preview {
+    padding: 1.5rem;
+  }
 }
 
 .wish-card {
@@ -747,7 +841,6 @@ footer p {
   .family-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
 }
 
 @media (min-width: 1024px) {
