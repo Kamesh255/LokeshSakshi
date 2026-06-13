@@ -9,7 +9,7 @@ const events = [
     location: "Two Brothers Resort",
     theme: "A Celebration of New Beginnings",
     icon: <FaRing />,
-    color: "#831c2f",
+    color: "#ecc900",
     map: "https://www.google.com/maps/search/?api=1&query=Two+Brothers+Resort+Nagpur",
   },
   {
@@ -19,7 +19,7 @@ const events = [
     location: "Two Brothers Resort",
     theme: "An Evening of Music & Dance",
     icon: <FaMusic />,
-    color: "#5c1a70",
+    color: "#ecc900",
     map: "https://www.google.com/maps/search/?api=1&query=Two+Brothers+Resort+Nagpur",
   },
   {
@@ -29,7 +29,7 @@ const events = [
     location: "Two Brothers Resort",
     theme: "Blessings, Laughter & Traditions",
     icon: <FaPalette />,
-    color: "#d27f12",
+    color: "#ecc900",
     map: "https://www.google.com/maps/search/?api=1&query=Two+Brothers+Resort+Nagpur",
   },
   {
@@ -39,7 +39,7 @@ const events = [
     location: "Two Brothers Resort",
     theme: "The Beginning of Forever",
     icon: <FaHorse />,
-    color: "#9b1123",
+    color: "#ecc900",
     map: "https://www.google.com/maps/search/?api=1&query=Two+Brothers+Resort+Nagpur",
   },
 ];

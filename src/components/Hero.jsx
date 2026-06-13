@@ -24,6 +24,7 @@ export default function Hero() {
     };
   }, []);
 
+  
   useEffect(() => {
     if (!audioRef.current) return;
     if (musicOn) {
@@ -57,9 +58,9 @@ export default function Hero() {
             <strong>As they embark on a beautiful journey of love, companionship, and togetherness.</strong>
           </div>
         </motion.div>
-        <motion.div initial="hidden" animate="visible" variants={heroAnimations} className="hero-intro">
+        {/* <motion.div initial="hidden" animate="visible" variants={heroAnimations} className="hero-intro">
           Lokesh ❤️ Sakshi
-        </motion.div>
+        </motion.div> */}
         <motion.h1 initial="hidden" animate="visible" variants={heroAnimations} className="hero-title">
           <span>Lokesh</span>
           <span className="gold">&amp;</span>
@@ -75,9 +76,7 @@ export default function Hero() {
           <button className="music-button" type="button" onClick={() => setMusicOn((state) => !state)}>
             {musicOn ? <BsVolumeMuteFill /> : <BsMusicNoteBeamed />} {hoverText}
           </button>
-          <a className="cta-button" href="#countdown">
-            See Countdown
-          </a>
+         
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.7, duration: 1 } }} className="scroll-indicator">
           <span>Scroll for the details</span>

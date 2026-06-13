@@ -87,7 +87,7 @@ export default function RSVPForm() {
     <section id="rsvp" className="section-shell rsvp-section">
       <div className="section-title">
         <span className="section-subtitle">RSVP</span>
-        <h2>Will We See You At The Wedding? ❤️</h2>
+        <h2>We Will See You At The Wedding? ❤️</h2>
         <p>Food, Dance, Memories &amp; Endless Celebrations Await You!</p>
       </div>
 

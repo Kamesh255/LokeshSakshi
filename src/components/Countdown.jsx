@@ -32,7 +32,7 @@ export default function Countdown() {
     <section id="countdown" className="section-shell">
       <div className="section-title">
         <h2>Countdown to the Wedding</h2>
-        <p>Lokesh and Sakshi's royal wedding is approaching. Every second counts toward this premium celebration.</p>
+        <p>A beautiful new chapter is about to begin. Count down the days until we celebrate love, togetherness, and a lifetime of happiness with our family and friends. ✨</p>
       </div>
       <div className="countdown-grid">
         {timerCards.map((item, index) => (
